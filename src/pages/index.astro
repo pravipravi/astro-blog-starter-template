@@ -3,6 +3,7 @@ import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import '../styles/apsis-landing.css';
 ---
 
 <!doctype html>
@@ -10,41 +11,116 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
-	<body>
-		<Header />
+	<body class="apsis-landing">
+		<Header theme="dark" />
 		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This
-				template serves as a lightweight, minimally-styled starting point for anyone looking to build
-				a personal website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/content/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to <a href="https://docs.astro.build/"
-					>read the docs
-				</a> or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out <a
-					href="https://github.com/Charca/astro-blog-template"
-					>astro-blog-template
-				</a> by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
+			<section class="apsis-hero" aria-labelledby="hero-heading">
+				<div class="apsis-hero-inner">
+					<span class="apsis-eyebrow">Software · Product · Partnership</span>
+					<h1 id="hero-heading">Software that stays aligned with your business</h1>
+					<p class="apsis-hero-lead">
+						Apsis Concepts designs and delivers custom applications, integrations, and technical
+						leadership—so your team can ship with confidence and keep evolving without rework.
+					</p>
+					<div class="apsis-hero-cta">
+						<a class="apsis-btn apsis-btn--primary" href="/#contact">Start a conversation</a>
+						<a class="apsis-btn apsis-btn--ghost" href="/about">About the company</a>
+					</div>
+					<div class="apsis-stats" role="presentation">
+						<div class="apsis-stat">
+							<strong>10+</strong>
+							<span>Years combined delivery</span>
+						</div>
+						<div class="apsis-stat">
+							<strong>Cloud-first</strong>
+							<span>Secure, observable systems</span>
+						</div>
+						<div class="apsis-stat">
+							<strong>Partnership</strong>
+							<span>Embedded with your roadmap</span>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section id="services" class="apsis-section" aria-labelledby="services-heading">
+				<h2 id="services-heading" class="apsis-section-title">What we build</h2>
+				<p class="apsis-section-intro">
+					From greenfield products to modernization of legacy stacks, we focus on maintainable
+					architecture, clear ownership, and measurable outcomes—similar in spirit to the composed,
+					dark-space layouts of modern agency sites, with room for your story to breathe.
+				</p>
+				<div class="apsis-grid">
+					<article class="apsis-card">
+						<div class="apsis-card-icon">01</div>
+						<h3>Product engineering</h3>
+						<p>
+							Web platforms, APIs, and internal tools built for reliability, performance, and teams
+							that iterate weekly—not yearly.
+						</p>
+					</article>
+					<article class="apsis-card">
+						<div class="apsis-card-icon">02</div>
+						<h3>Integration &amp; data</h3>
+						<p>
+							Connect CRMs, billing, analytics, and custom backends with observability and
+							documented contracts your engineers will thank you for.
+						</p>
+					</article>
+					<article class="apsis-card">
+						<div class="apsis-card-icon">03</div>
+						<h3>Technical direction</h3>
+						<p>
+							Architecture reviews, delivery practices, and hands-on mentorship so decisions stay
+							consistent as you scale.
+						</p>
+					</article>
+				</div>
+			</section>
+
+			<section class="apsis-section" aria-labelledby="approach-heading">
+				<h2 id="approach-heading" class="apsis-section-title">How we work</h2>
+				<p class="apsis-section-intro">
+					We keep communication short and artifacts useful: thin slices of work, visible progress, and
+					room to adjust when priorities shift.
+				</p>
+				<div class="apsis-grid">
+					<article class="apsis-card">
+						<div class="apsis-card-icon">◇</div>
+						<h3>Discovery that respects time</h3>
+						<p>
+							We clarify outcomes and constraints early, then validate with prototypes before
+							committing to large builds.
+						</p>
+					</article>
+					<article class="apsis-card">
+						<div class="apsis-card-icon">◎</div>
+						<h3>Ownership, not handoffs</h3>
+						<p>
+							Your engineers stay in the loop with pairing, reviews, and documentation that matches
+							how you actually operate.
+						</p>
+					</article>
+					<article class="apsis-card">
+						<div class="apsis-card-icon">→</div>
+						<h3>Long-term maintainability</h3>
+						<p>
+							Tests, CI, and operational runbooks are part of the deliverable—not an afterthought.
+						</p>
+					</article>
+				</div>
+			</section>
+
+			<section id="contact" class="apsis-cta-band" aria-labelledby="contact-heading">
+				<h2 id="contact-heading">Tell us what you are shipping next</h2>
+				<p>
+					Share your timeline, stack, and success criteria—we will respond with a concise next step.
+				</p>
+				<a class="apsis-btn apsis-btn--primary" href="mailto:hello@apsisconcepts.com"
+					>hello@apsisconcepts.com</a
+				>
+			</section>
 		</main>
-		<Footer />
+		<Footer theme="dark" />
 	</body>
 </html>

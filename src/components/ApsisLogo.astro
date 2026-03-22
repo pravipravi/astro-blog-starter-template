@@ -1,0 +1,78 @@
+---
+interface Props {
+	compact?: boolean;
+	class?: string;
+}
+
+const { compact = false, class: className } = Astro.props;
+---
+
+<a href="/" class:list={['apsis-logo-link', className]} aria-label="Apsis Concepts home">
+	<span class="apsis-logo-mark" aria-hidden="true">
+		<svg viewBox="0 0 48 48" width="48" height="48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+			<defs>
+				<linearGradient id="apsis-mark-grad" x1="6" y1="42" x2="42" y2="6" gradientUnits="userSpaceOnUse">
+					<stop stop-color="#34d399" />
+					<stop offset="1" stop-color="#10b981" />
+				</linearGradient>
+			</defs>
+			<path
+				d="M24 5L6 41h7.5l3.5-8.5h14l3.5 8.5H42L24 5z"
+				stroke="url(#apsis-mark-grad)"
+				stroke-width="2.2"
+				stroke-linejoin="round"
+				fill="none"
+			/>
+			<path d="M15.5 28.5h17L24 13l-8.5 15.5z" fill="rgba(52,211,153,0.14)" />
+			<circle cx="24" cy="7" r="3.25" fill="#34d399" />
+		</svg>
+	</span>
+	{
+		!compact && (
+			<span class="apsis-logo-wordmark">
+				<span class="apsis-logo-name">Apsis</span>
+				<span class="apsis-logo-sub">Concepts</span>
+			</span>
+		)
+	}
+</a>
+
+<style>
+	.apsis-logo-link {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.65rem;
+		text-decoration: none;
+		color: inherit;
+	}
+	.apsis-logo-mark {
+		display: flex;
+		flex-shrink: 0;
+		line-height: 0;
+	}
+	.apsis-logo-mark svg {
+		display: block;
+		width: 2.5rem;
+		height: 2.5rem;
+	}
+	.apsis-logo-wordmark {
+		display: flex;
+		flex-direction: column;
+		line-height: 1.05;
+	}
+	.apsis-logo-name {
+		font-family: 'Outfit', system-ui, sans-serif;
+		font-weight: 700;
+		font-size: 1.15rem;
+		letter-spacing: -0.02em;
+		color: var(--apsis-text, rgb(var(--black)));
+	}
+	.apsis-logo-sub {
+		font-family: 'DM Sans', system-ui, sans-serif;
+		font-weight: 500;
+		font-size: 0.7rem;
+		letter-spacing: 0.22em;
+		text-transform: uppercase;
+		color: var(--apsis-muted, rgb(var(--gray)));
+	}
+</style>

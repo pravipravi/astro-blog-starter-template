@@ -1,62 +1,70 @@
 ---
-import Layout from '../layouts/BlogPost.astro';
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE } from '../consts';
+import '../styles/apsis-landing.css';
+
+const title = `About — ${SITE_TITLE}`;
+const description =
+	'Learn how Apsis Concepts works with product and engineering teams to ship dependable software.';
 ---
 
-<Layout
-	title="About Me"
-	description="Lorem ipsum dolor sit amet"
-	pubDate={new Date('August 08 2021')}
-	heroImage="/blog-placeholder-about.jpg"
->
-	<p>
-		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-		labore et dolore magna aliqua. Vitae ultricies leo integer malesuada nunc vel risus commodo
-		viverra. Adipiscing enim eu turpis egestas pretium. Euismod elementum nisi quis eleifend quam
-		adipiscing. In hac habitasse platea dictumst vestibulum. Sagittis purus sit amet volutpat. Netus
-		et malesuada fames ac turpis egestas. Eget magna fermentum iaculis eu non diam phasellus
-		vestibulum lorem. Varius sit amet mattis vulputate enim. Habitasse platea dictumst quisque
-		sagittis. Integer quis auctor elit sed vulputate mi. Dictumst quisque sagittis purus sit amet.
-	</p>
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={title} description={description} />
+	</head>
+	<body class="apsis-landing">
+		<Header theme="dark" />
+		<main>
+			<section class="apsis-hero" aria-labelledby="about-heading">
+				<div class="apsis-hero-inner">
+					<span class="apsis-eyebrow">About Apsis Concepts</span>
+					<h1 id="about-heading">Built for teams that outgrow ad hoc engineering</h1>
+					<p class="apsis-hero-lead">
+						We are a software company focused on clarity: honest scoping, pragmatic architecture,
+						and delivery that does not crumble when traffic or complexity grows.
+					</p>
+					<div class="apsis-hero-cta">
+						<a class="apsis-btn apsis-btn--primary" href="/#contact">Work with us</a>
+						<a class="apsis-btn apsis-btn--ghost" href="/">Back to home</a>
+					</div>
+				</div>
+			</section>
 
-	<p>
-		Morbi tristique senectus et netus. Id semper risus in hendrerit gravida rutrum quisque non
-		tellus. Habitasse platea dictumst quisque sagittis purus sit amet. Tellus molestie nunc non
-		blandit massa. Cursus vitae congue mauris rhoncus. Accumsan tortor posuere ac ut. Fringilla urna
-		porttitor rhoncus dolor. Elit ullamcorper dignissim cras tincidunt lobortis. In cursus turpis
-		massa tincidunt dui ut ornare lectus. Integer feugiat scelerisque varius morbi enim nunc.
-		Bibendum neque egestas congue quisque egestas diam. Cras ornare arcu dui vivamus arcu felis
-		bibendum. Dignissim suspendisse in est ante in nibh mauris. Sed tempus urna et pharetra pharetra
-		massa massa ultricies mi.
-	</p>
-
-	<p>
-		Mollis nunc sed id semper risus in. Convallis a cras semper auctor neque. Diam sit amet nisl
-		suscipit. Lacus viverra vitae congue eu consequat ac felis donec. Egestas integer eget aliquet
-		nibh praesent tristique magna sit amet. Eget magna fermentum iaculis eu non diam. In vitae
-		turpis massa sed elementum. Tristique et egestas quis ipsum suspendisse ultrices. Eget lorem
-		dolor sed viverra ipsum. Vel turpis nunc eget lorem dolor sed viverra. Posuere ac ut consequat
-		semper viverra nam. Laoreet suspendisse interdum consectetur libero id faucibus. Diam phasellus
-		vestibulum lorem sed risus ultricies tristique. Rhoncus dolor purus non enim praesent elementum
-		facilisis. Ultrices tincidunt arcu non sodales neque. Tempus egestas sed sed risus pretium quam
-		vulputate. Viverra suspendisse potenti nullam ac tortor vitae purus faucibus ornare. Fringilla
-		urna porttitor rhoncus dolor purus non. Amet dictum sit amet justo donec enim.
-	</p>
-
-	<p>
-		Mattis ullamcorper velit sed ullamcorper morbi tincidunt. Tortor posuere ac ut consequat semper
-		viverra. Tellus mauris a diam maecenas sed enim ut sem viverra. Venenatis urna cursus eget nunc
-		scelerisque viverra mauris in. Arcu ac tortor dignissim convallis aenean et tortor at. Curabitur
-		gravida arcu ac tortor dignissim convallis aenean et tortor. Egestas tellus rutrum tellus
-		pellentesque eu. Fusce ut placerat orci nulla pellentesque dignissim enim sit amet. Ut enim
-		blandit volutpat maecenas volutpat blandit aliquam etiam. Id donec ultrices tincidunt arcu. Id
-		cursus metus aliquam eleifend mi.
-	</p>
-
-	<p>
-		Tempus quam pellentesque nec nam aliquam sem. Risus at ultrices mi tempus imperdiet. Id porta
-		nibh venenatis cras sed felis eget velit. Ipsum a arcu cursus vitae. Facilisis magna etiam
-		tempor orci eu lobortis elementum. Tincidunt dui ut ornare lectus sit. Quisque non tellus orci
-		ac. Blandit libero volutpat sed cras. Nec tincidunt praesent semper feugiat nibh sed pulvinar
-		proin gravida. Egestas integer eget aliquet nibh praesent tristique magna.
-	</p>
-</Layout>
+			<section class="apsis-section apsis-prose" aria-labelledby="mission-heading">
+				<h2 id="mission-heading">Mission</h2>
+				<p>
+					Apsis Concepts exists to help organizations ship software that stays understandable—by the
+					people who build it and the teams who rely on it. We bias toward small, composable
+					services, observable systems, and documentation that earns its place on the shelf.
+				</p>
+				<h2>Values</h2>
+				<ul>
+					<li>
+						<strong>Transparency</strong> — estimates tied to assumptions; risks named early.
+					</li>
+					<li>
+						<strong>Craft</strong> — code review, automated checks, and operational readiness as
+						defaults.
+					</li>
+					<li>
+						<strong>Partnership</strong> — we succeed when your team can own the result without us.
+					</li>
+				</ul>
+				<h2>Who we work with</h2>
+				<p>
+					Product-led companies, funded startups, and internal IT groups modernizing critical
+					workflows. If you need a steady engineering partner—not a black box—this is the kind of
+					relationship we optimize for.
+				</p>
+				<p>
+					For writing and updates from the team, see the <a href="/blog">blog</a>. To discuss a
+					project, use the <a href="/#contact">contact section</a> on the home page.
+				</p>
+			</section>
+		</main>
+		<Footer theme="dark" />
+	</body>
+</html>
